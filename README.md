@@ -1,2 +1,2 @@
 # ActivityLifecycle
-Android app demonstrating the activity lifecycle methods. Shows the user when these lifecycle methods are executed through interacting with the app. 
+Activity Lifecycle is a simple android application designed as part of a Udacity training course. The purpose of the application is to demonstrate how the lifecycle methods in the android framework function.
