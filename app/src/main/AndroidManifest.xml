@@ -21,10 +21,10 @@ limitations under the License.
       android:versionName="2.0">
 
     <application
-        android:label="@string/app_name"
-        android:icon="@drawable/ic_launcher"
         android:allowBackup="true"
-        android:fullBackupContent=""
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".ActivityA">
