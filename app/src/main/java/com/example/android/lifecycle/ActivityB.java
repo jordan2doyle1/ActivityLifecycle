@@ -25,9 +25,6 @@ import android.widget.TextView;
 import com.example.android.lifecycle.util.StatusTracker;
 import com.example.android.lifecycle.util.Utils;
 
-/**
- * Example Activity to demonstrate the lifecycle callback methods.
- */
 public class ActivityB extends Activity {
 
     private String mActivityName;
@@ -40,8 +37,8 @@ public class ActivityB extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b);
         mActivityName = getString(R.string.activity_b_label);
-        mStatusView = (TextView)findViewById(R.id.status_view_b);
-        mStatusAllView = (TextView)findViewById(R.id.status_view_all_b);
+        mStatusView = findViewById(R.id.status_view_b);
+        mStatusAllView = findViewById(R.id.status_view_all_b);
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_create));
         Utils.printStatus(mStatusView, mStatusAllView);
     }

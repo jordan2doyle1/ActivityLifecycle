@@ -20,14 +20,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.lifecycle.util.StatusTracker;
 import com.example.android.lifecycle.util.Utils;
 
-/**
- * Example Activity to demonstrate the lifecycle callback methods.
- */
 public class ActivityA extends Activity {
 
     private String mActivityName;
@@ -40,10 +38,39 @@ public class ActivityA extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a);
         mActivityName = getString(R.string.activity_a);
-        mStatusView = (TextView)findViewById(R.id.status_view_a);
-        mStatusAllView = (TextView)findViewById(R.id.status_view_all_a);
+        mStatusView = findViewById(R.id.status_view_a);
+        mStatusAllView = findViewById(R.id.status_view_all_a);
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_create));
         Utils.printStatus(mStatusView, mStatusAllView);
+
+        Button start_B = findViewById(R.id.btn_start_b);
+        start_B.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityB(v);
+            }
+        });
+        Button start_C = findViewById(R.id.btn_start_c);
+        start_C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityC(v);
+            }
+        });
+        Button start_dialog = findViewById(R.id.btn_start_dialog);
+        start_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startDialog(v);
+            }
+        });
+        Button finish_A = findViewById(R.id.btn_finish_a);
+        finish_A.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishActivityA(v);
+            }
+        });
     }
 
     @Override
@@ -103,7 +130,7 @@ public class ActivityA extends Activity {
     }
 
     public void finishActivityA(View v) {
-        //ActivityA.this.finish();
+        ActivityA.this.finish();
     }
 
 }
