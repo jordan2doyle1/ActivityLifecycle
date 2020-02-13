@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.android.lifecycle.Reflection.InterfaceCallbackLinker;
 import com.example.android.lifecycle.util.StatusTracker;
 import com.example.android.lifecycle.util.Utils;
 
@@ -37,6 +38,7 @@ public class ActivityA extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a);
+
         mActivityName = getString(R.string.activity_a);
         mStatusView = findViewById(R.id.status_view_a);
         mStatusAllView = findViewById(R.id.status_view_all_a);
@@ -47,6 +49,7 @@ public class ActivityA extends Activity {
         start_B.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(R.id.btn_start_b);
                 startActivityB(v);
             }
         });
@@ -54,6 +57,7 @@ public class ActivityA extends Activity {
         start_C.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(R.id.btn_start_c);
                 startActivityC(v);
             }
         });
@@ -61,6 +65,7 @@ public class ActivityA extends Activity {
         start_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(R.id.btn_start_dialog);
                 startDialog(v);
             }
         });
@@ -68,9 +73,14 @@ public class ActivityA extends Activity {
         finish_A.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println(R.id.btn_finish_a);
                 finishActivityA(v);
             }
         });
+
+        InterfaceCallbackLinker linker = new InterfaceCallbackLinker();
+        // linker.printActivityAInfo();
+        linker.printViewInfo();
     }
 
     @Override
