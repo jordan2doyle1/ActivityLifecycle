@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.lifecycle.util.StatusTracker;
@@ -41,6 +42,24 @@ public class ActivityB extends Activity {
         mStatusAllView = findViewById(R.id.status_view_all_b);
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_create));
         Utils.printStatus(mStatusView, mStatusAllView);
+
+        Button start_dialog = findViewById(R.id.btn_start_dialog);
+        start_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(R.id.btn_start_dialog);
+                startDialog(v);
+            }
+        });
+
+        Button start_A = findViewById(R.id.btn_start_a);
+        start_A.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(R.id.btn_start_a);
+                startActivityA(v);
+            }
+        });
     }
 
     @Override
