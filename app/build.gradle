@@ -1,12 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/jordandoyle/AndroidStudioProjects/KeyStore')
+            storePassword 'Compscience13!$'
+            keyAlias = 'ActivityLifecycleKey'
+            keyPassword 'Kildare!((%2018'
+        }
+    }
     compileSdkVersion 28
 
     defaultConfig {
         applicationId "com.example.android.lifecycle"
         minSdkVersion 24
         targetSdkVersion 28
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
