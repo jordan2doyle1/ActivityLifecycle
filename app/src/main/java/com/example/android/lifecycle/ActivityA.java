@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.example.android.lifecycle;
 
 import android.app.Activity;
@@ -23,7 +22,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.android.lifecycle.Reflection.InterfaceCallbackLinker;
 import com.example.android.lifecycle.util.StatusTracker;
 import com.example.android.lifecycle.util.Utils;
 
@@ -77,10 +75,6 @@ public class ActivityA extends Activity {
                 finishActivityA(v);
             }
         });
-
-        InterfaceCallbackLinker linker = new InterfaceCallbackLinker();
-        // linker.printActivityAInfo();
-        linker.printViewInfo();
     }
 
     @Override
@@ -100,6 +94,15 @@ public class ActivityA extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN |
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(uiOptions);
+
+        // ActionBar actionBar = getActionBar();
+        // if (actionBar != null) actionBar.hide();
+
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_resume));
         Utils.printStatus(mStatusView, mStatusAllView);
     }

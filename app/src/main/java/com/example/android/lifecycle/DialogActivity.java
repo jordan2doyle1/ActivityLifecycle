@@ -20,24 +20,18 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Toast;
 
 public class DialogActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Make us non-modal, so that others can receive touch events.
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
-
-        // ...but notify us that it happened.
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
-                WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH);
-
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN |
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(uiOptions);
+
         setContentView(R.layout.activity_dialog);
     }
 
@@ -47,12 +41,9 @@ public class DialogActivity extends Activity {
 
     public boolean onTouchEvent(MotionEvent event) {
 
-        // If we've received a touch notification that the user has touched outside the app, finish
-        // the activity.
+        // If the user has touched outside the app, finish the activity.
         if (MotionEvent.ACTION_OUTSIDE == event.getAction()) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Touch Event Occurred",
-                    Toast.LENGTH_SHORT);
-            toast.show();
+            DialogActivity.this.finish();
             return true;
         }
 

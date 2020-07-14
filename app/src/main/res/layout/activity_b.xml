@@ -47,7 +47,6 @@ limitations under the License.
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/btn_start_a"
-            android:onClick="startActivityC"
             android:text="@string/btn_start_c_label" />
 
         <Button
@@ -55,7 +54,6 @@ limitations under the License.
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/btn_start_c"
-            android:onClick="finishActivityB"
             android:text="@string/btn_finish_b_label" />
 
         <Button

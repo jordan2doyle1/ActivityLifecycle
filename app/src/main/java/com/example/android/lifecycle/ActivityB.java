@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.example.android.lifecycle;
 
 import android.app.Activity;
@@ -43,6 +42,22 @@ public class ActivityB extends Activity {
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_create));
         Utils.printStatus(mStatusView, mStatusAllView);
 
+        Button start_A = findViewById(R.id.btn_start_a);
+        start_A.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(R.id.btn_start_a);
+                startActivityA(v);
+            }
+        });
+        Button start_C = findViewById(R.id.btn_start_c);
+        start_C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(R.id.btn_start_c);
+                startActivityC(v);
+            }
+        });
         Button start_dialog = findViewById(R.id.btn_start_dialog);
         start_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,13 +66,12 @@ public class ActivityB extends Activity {
                 startDialog(v);
             }
         });
-
-        Button start_A = findViewById(R.id.btn_start_a);
-        start_A.setOnClickListener(new View.OnClickListener() {
+        Button finish_B = findViewById(R.id.btn_finish_b);
+        finish_B.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(R.id.btn_start_a);
-                startActivityA(v);
+                System.out.println(R.id.btn_finish_b);
+                finishActivityB(v);
             }
         });
     }
@@ -79,6 +93,12 @@ public class ActivityB extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN |
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(uiOptions);
+
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_resume));
         Utils.printStatus(mStatusView, mStatusAllView);
     }
