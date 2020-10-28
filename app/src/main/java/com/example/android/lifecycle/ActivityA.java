@@ -30,7 +30,7 @@ public class ActivityA extends Activity {
     private String mActivityName;
     private TextView mStatusView;
     private TextView mStatusAllView;
-    private StatusTracker mStatusTracker = StatusTracker.getInstance();
+    private final StatusTracker mStatusTracker = StatusTracker.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class ActivityA extends Activity {
             @Override
             public void onClick(View v) {
                 System.out.println(R.id.btn_start_b);
-                startActivityB(v);
+                startActivityB();
             }
         });
         Button start_C = findViewById(R.id.btn_start_c);
@@ -56,7 +56,7 @@ public class ActivityA extends Activity {
             @Override
             public void onClick(View v) {
                 System.out.println(R.id.btn_start_c);
-                startActivityC(v);
+                startActivityC();
             }
         });
         Button start_dialog = findViewById(R.id.btn_start_dialog);
@@ -64,7 +64,7 @@ public class ActivityA extends Activity {
             @Override
             public void onClick(View v) {
                 System.out.println(R.id.btn_start_dialog);
-                startDialog(v);
+                startDialog();
             }
         });
         Button finish_A = findViewById(R.id.btn_finish_a);
@@ -72,7 +72,7 @@ public class ActivityA extends Activity {
             @Override
             public void onClick(View v) {
                 System.out.println(R.id.btn_finish_a);
-                finishActivityA(v);
+                finishActivityA();
             }
         });
     }
@@ -100,9 +100,6 @@ public class ActivityA extends Activity {
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(uiOptions);
 
-        // ActionBar actionBar = getActionBar();
-        // if (actionBar != null) actionBar.hide();
-
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_resume));
         Utils.printStatus(mStatusView, mStatusAllView);
     }
@@ -127,22 +124,22 @@ public class ActivityA extends Activity {
         mStatusTracker.clear();
     }
 
-    public void startDialog(View v) {
+    public void startDialog() {
         Intent intent = new Intent(ActivityA.this, DialogActivity.class);
         startActivity(intent);
     }
 
-    public void startActivityB(View v) {
+    public void startActivityB() {
         Intent intent = new Intent(ActivityA.this, ActivityB.class);
         startActivity(intent);
     }
 
-    public void startActivityC(View v) {
+    public void startActivityC() {
         Intent intent = new Intent(ActivityA.this, ActivityC.class);
         startActivity(intent);
     }
 
-    public void finishActivityA(View v) {
+    public void finishActivityA() {
         ActivityA.this.finish();
     }
 

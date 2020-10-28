@@ -23,9 +23,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class StatusTracker {
-    private Map<String, String> mStatusMap;
-    private List<String> mMethodList;
-    private static StatusTracker ourInstance = new StatusTracker();
+    private final Map<String, String> mStatusMap;
+    private final List<String> mMethodList;
+    private static final StatusTracker ourInstance = new StatusTracker();
     private static final String STATUS_SUFFIX = "ed";
 
     public static StatusTracker getInstance() {

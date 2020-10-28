@@ -16,5 +16,4 @@ limitations under the License.
 <resources>
     <dimen name="font_large">44sp</dimen>
     <dimen name="font_medium">24sp</dimen>
-    <dimen name="font_small">10sp</dimen>
 </resources>

@@ -27,10 +27,10 @@ import com.example.android.lifecycle.util.Utils;
 
 public class ActivityB extends Activity {
 
+    private final StatusTracker mStatusTracker = StatusTracker.getInstance();
     private String mActivityName;
     private TextView mStatusView;
     private TextView mStatusAllView;
-    private StatusTracker mStatusTracker = StatusTracker.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class ActivityB extends Activity {
             @Override
             public void onClick(View v) {
                 System.out.println(R.id.btn_start_a);
-                startActivityA(v);
+                startActivityA();
             }
         });
         Button start_C = findViewById(R.id.btn_start_c);
@@ -55,7 +55,7 @@ public class ActivityB extends Activity {
             @Override
             public void onClick(View v) {
                 System.out.println(R.id.btn_start_c);
-                startActivityC(v);
+                startActivityC();
             }
         });
         Button start_dialog = findViewById(R.id.btn_start_dialog);
@@ -63,7 +63,7 @@ public class ActivityB extends Activity {
             @Override
             public void onClick(View v) {
                 System.out.println(R.id.btn_start_dialog);
-                startDialog(v);
+                startDialog();
             }
         });
         Button finish_B = findViewById(R.id.btn_finish_b);
@@ -71,7 +71,7 @@ public class ActivityB extends Activity {
             @Override
             public void onClick(View v) {
                 System.out.println(R.id.btn_finish_b);
-                finishActivityB(v);
+                finishActivityB();
             }
         });
     }
@@ -122,22 +122,22 @@ public class ActivityB extends Activity {
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_destroy));
     }
 
-    public void startDialog(View v) {
+    public void startDialog() {
         Intent intent = new Intent(ActivityB.this, DialogActivity.class);
         startActivity(intent);
     }
 
-    public void startActivityA(View v) {
+    public void startActivityA() {
         Intent intent = new Intent(ActivityB.this, ActivityA.class);
         startActivity(intent);
     }
 
-    public void startActivityC(View v) {
+    public void startActivityC() {
         Intent intent = new Intent(ActivityB.this, ActivityC.class);
         startActivity(intent);
     }
 
-    public void finishActivityB(View v) {
+    public void finishActivityB() {
         ActivityB.this.finish();
     }
 }

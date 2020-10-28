@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.lifecycle.util.StatusTracker;
@@ -27,10 +28,10 @@ import com.example.android.lifecycle.util.Utils;
 
 public class ActivityC extends Activity {
 
+    private final StatusTracker mStatusTracker = StatusTracker.getInstance();
     private String mActivityName;
     private TextView mStatusView;
     private TextView mStatusAllView;
-    private StatusTracker mStatusTracker = StatusTracker.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,39 @@ public class ActivityC extends Activity {
         mStatusAllView = findViewById(R.id.status_view_all_c);
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_create));
         Utils.printStatus(mStatusView, mStatusAllView);
+
+        Button start_A = findViewById(R.id.btn_start_a);
+        start_A.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(R.id.btn_start_a);
+                startActivityA();
+            }
+        });
+        Button start_B = findViewById(R.id.btn_start_b);
+        start_B.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(R.id.btn_start_b);
+                startActivityB();
+            }
+        });
+        Button start_dialog = findViewById(R.id.btn_start_dialog);
+        start_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(R.id.btn_start_dialog);
+                startDialog();
+            }
+        });
+        Button finish_C = findViewById(R.id.btn_finish_c);
+        finish_C.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(R.id.btn_finish_c);
+                finishActivityC();
+            }
+        });
     }
 
     @Override
@@ -89,22 +123,22 @@ public class ActivityC extends Activity {
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_destroy));
     }
 
-    public void startDialog(View v) {
+    public void startDialog() {
         Intent intent = new Intent(ActivityC.this, DialogActivity.class);
         startActivity(intent);
     }
 
-    public void startActivityA(View v) {
+    public void startActivityA() {
         Intent intent = new Intent(ActivityC.this, ActivityA.class);
         startActivity(intent);
     }
 
-    public void startActivityB(View v) {
+    public void startActivityB() {
         Intent intent = new Intent(ActivityC.this, ActivityB.class);
         startActivity(intent);
     }
 
-    public void finishActivityC(View v) {
+    public void finishActivityC() {
         ActivityC.this.finish();
     }
 }

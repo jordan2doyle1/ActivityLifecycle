@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 
 public class DialogActivity extends Activity {
 
@@ -33,9 +34,18 @@ public class DialogActivity extends Activity {
         decorView.setSystemUiVisibility(uiOptions);
 
         setContentView(R.layout.activity_dialog);
+
+        Button close_dialog = findViewById(R.id.btn_close_dialog);
+        close_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(R.id.btn_close_dialog);
+                finishDialog();
+            }
+        });
     }
 
-    public void finishDialog(View v) {
+    public void finishDialog() {
         DialogActivity.this.finish();
     }
 
