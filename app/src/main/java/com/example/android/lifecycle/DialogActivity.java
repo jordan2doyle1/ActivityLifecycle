@@ -23,7 +23,7 @@ public class DialogActivity extends Activity {
         close_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(R.id.btn_close_dialog);
+                System.out.println("btn_close_dialog:" + R.id.btn_close_dialog);
                 finishDialog();
             }
         });

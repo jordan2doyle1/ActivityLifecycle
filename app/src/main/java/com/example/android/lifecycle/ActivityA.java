@@ -32,7 +32,7 @@ public class ActivityA extends Activity {
         start_B.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(R.id.btn_start_b);
+                System.out.println("btn_start_b:" + R.id.btn_start_b);
                 startActivityB();
             }
         });
@@ -40,7 +40,7 @@ public class ActivityA extends Activity {
         start_C.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(R.id.btn_start_c);
+                System.out.println("btn_start_c:" + R.id.btn_start_c);
                 startActivityC();
             }
         });
@@ -48,7 +48,7 @@ public class ActivityA extends Activity {
         start_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(R.id.btn_start_dialog);
+                System.out.println("btn_start_dialog:" + R.id.btn_start_dialog);
                 startDialog();
             }
         });
@@ -56,7 +56,7 @@ public class ActivityA extends Activity {
         finish_A.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(R.id.btn_finish_a);
+                System.out.println("btn_finish_a:" + R.id.btn_finish_a);
                 finishActivityA();
             }
         });
