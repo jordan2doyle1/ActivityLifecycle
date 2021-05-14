@@ -43,4 +43,13 @@ limitations under the License.
 
     <string name="activity_a">Activity A</string>
 
+    <string name="last_known_location_title">Last Known Location</string>
+    <string name="current_location_title">Current Location</string>
+    <string name="current_location_instructions">Press update button to retrieve current location</string>
+    <string name="update_button_text">Update</string>
+    <string name="last_known_location_instructions">Press update to retrieve last known location</string>
+    <string name="permission_status_granted">Location Permission Granted</string>
+    <string name="permission_status_denied">Location Permission Denied</string>
+    <string name="latitude_and_longitude">Latitude: %f Longitude: %f</string>
+
 </resources>

@@ -27,5 +27,6 @@ android {
 }
 
 dependencies {
-    implementation files('libs/android-support-v13.jar')
+//    implementation files('libs/android-support-v13.jar')
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
 }
