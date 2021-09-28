@@ -45,12 +45,12 @@ public class ActivityB extends AppCompatActivity {
                 startActivityC();
             }
         });
-        Button start_dialog = findViewById(R.id.btn_start_dialog);
-        start_dialog.setOnClickListener(new View.OnClickListener() {
+        Button start_fragment = findViewById(R.id.btn_start_fragment);
+        start_fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_dialog:" + R.id.btn_start_dialog);
-                startDialog();
+                System.out.println("btn_start_fragment:" + R.id.btn_start_fragment);
+                startFragment();
             }
         });
         Button finish_B = findViewById(R.id.btn_finish_b);
@@ -109,8 +109,8 @@ public class ActivityB extends AppCompatActivity {
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_destroy));
     }
 
-    public void startDialog() {
-        Intent intent = new Intent(ActivityB.this, DialogActivity.class);
+    public void startFragment() {
+        Intent intent = new Intent(ActivityB.this, FragmentActivity.class);
         startActivity(intent);
     }
 

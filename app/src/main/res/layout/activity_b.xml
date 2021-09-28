@@ -57,11 +57,11 @@ limitations under the License.
             android:text="@string/btn_finish_b_label" />
 
         <Button
-            android:id="@+id/btn_start_dialog"
+            android:id="@+id/btn_start_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/btn_finish_b"
-            android:text="@string/btn_start_dialog_label" />
+            android:text="@string/btn_start_fragment_label" />
     </RelativeLayout>
 
 

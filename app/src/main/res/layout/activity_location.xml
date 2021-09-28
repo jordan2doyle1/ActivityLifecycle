@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:paddingBottom="16dip"
-        android:text="@string/btn_location"
+        android:text="@string/btn_start_location_label"
         android:textColor="@color/light_yellow"
         android:textSize="@dimen/font_large" />
 
