@@ -1,93 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LocationActivity">
+    android:background="@color/dark_yellow"
+    android:orientation="vertical"
+    android:padding="8dip">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="16dip"
+        android:text="@string/btn_location"
+        android:textColor="@color/light_yellow"
+        android:textSize="@dimen/font_large" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_start_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_start_a_label" />
+
+        <Button
+            android:id="@+id/btn_start_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btn_start_a"
+            android:text="@string/btn_start_b_label" />
+
+        <Button
+            android:id="@+id/btn_start_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btn_start_b"
+            android:text="@string/btn_start_c_label" />
+
+        <Button
+            android:id="@+id/btn_finish_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btn_start_c"
+            android:text="@string/btn_finish_location_label" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lifecycle_method_list"
+        android:textColor="@color/light_yellow"
+        android:textSize="@dimen/font_medium" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <TextView
+            android:id="@+id/status_view_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="4dip"
+            android:textColor="@color/black"
+            android:typeface="monospace" />
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_status"
+        android:textColor="@color/light_yellow"
+        android:textSize="@dimen/font_medium" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <TextView
+            android:id="@+id/status_view_all_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="4dip"
+            android:textColor="@color/black"
+            android:typeface="monospace" />
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/last_known_location_title"
+        android:textColor="@color/light_yellow"
+        android:textSize="@dimen/font_medium">
+
+    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/last_known_location_text"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="50dp">
+            android:layout_weight="0.5"
+            android:background="@color/white"
+            android:padding="8dip"
+            android:text="@string/location_instructions"
+            android:textColor="@color/black"
+            android:typeface="monospace">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/last_known_location_title"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:layout_margin="10dp">
+        </TextView>
 
-            </TextView>
-
-            <TextView
-                android:id="@+id/last_known_location_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="@string/last_known_location_instructions"
-                android:textSize="15sp"
-                android:layout_margin="10dp">
-
-            </TextView>
-
-            <Button
-                android:id="@+id/last_known_location_update"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/update_button_text">
-
-            </Button>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/last_known_location_update"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="50dp">
+            android:text="@string/update_button_text">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/current_location_title"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:layout_margin="10dp">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/current_location_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="@string/current_location_instructions"
-                android:textSize="15sp"
-                android:layout_margin="10dp">
-
-            </TextView>
-
-            <Button
-                android:id="@+id/current_location_update"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/update_button_text">
-
-            </Button>
-
-        </LinearLayout>
+        </Button>
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/current_location_title"
+        android:textColor="@color/light_yellow"
+        android:textSize="@dimen/font_medium">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/current_location_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="@color/white"
+            android:padding="8dip"
+            android:text="@string/location_instructions"
+            android:textColor="@color/black"
+            android:typeface="monospace">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/current_location_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/update_button_text">
+
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

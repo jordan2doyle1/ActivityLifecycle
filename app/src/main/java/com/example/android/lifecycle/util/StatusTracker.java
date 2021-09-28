@@ -7,18 +7,18 @@ import java.util.Map;
 import java.util.Set;
 
 public class StatusTracker {
-    private final Map<String, String> mStatusMap;
-    private final List<String> mMethodList;
     private static final StatusTracker ourInstance = new StatusTracker();
     private static final String STATUS_SUFFIX = "ed";
-
-    public static StatusTracker getInstance() {
-        return ourInstance;
-    }
+    private final Map<String, String> mStatusMap;
+    private final List<String> mMethodList;
 
     private StatusTracker() {
         mStatusMap = new LinkedHashMap<>();
         mMethodList = new ArrayList<>();
+    }
+
+    public static StatusTracker getInstance() {
+        return ourInstance;
     }
 
     List<String> getMethodList() {

@@ -28,8 +28,10 @@ limitations under the License.
     <string name="on_pause">onPause</string>
     <string name="on_resume">onResume</string>
 
+    <string name="activity_a_label">Activity A</string>
     <string name="activity_b_label">Activity B</string>
     <string name="activity_c_label">Activity C</string>
+    <string name="activity_location_label">Activity Location</string>
 
     <string name="btn_start_a_label">Start A</string>
     <string name="btn_start_b_label">Start B</string>
@@ -41,15 +43,14 @@ limitations under the License.
     <string name="btn_finish_c_label">Finish C</string>
     <string name="btn_finish_dialog_label">Close</string>
 
-    <string name="activity_a">Activity A</string>
-
     <string name="last_known_location_title">Last Known Location</string>
     <string name="current_location_title">Current Location</string>
-    <string name="current_location_instructions">Press update button to retrieve current location</string>
     <string name="update_button_text">Update</string>
-    <string name="last_known_location_instructions">Press update to retrieve last known location</string>
+    <string name="location_instructions">Press Update !!</string>
     <string name="permission_status_granted">Location Permission Granted</string>
     <string name="permission_status_denied">Location Permission Denied</string>
-    <string name="latitude_and_longitude">Latitude: %f Longitude: %f</string>
+    <string name="latitude_and_longitude">Lat: %f Long: %f</string>
+    <string name="btn_location">Location</string>
+    <string name="btn_finish_location_label">Finish LOC</string>
 
 </resources>

@@ -1,22 +1,24 @@
 package com.example.android.lifecycle;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.android.lifecycle.util.StatusTracker;
 import com.example.android.lifecycle.util.Utils;
 
-public class ActivityC extends Activity {
+public class ActivityC extends AppCompatActivity {
 
     private final StatusTracker mStatusTracker = StatusTracker.getInstance();
     private String mActivityName;
     private TextView mStatusView;
     private TextView mStatusAllView;
 
+    @SuppressWarnings("Convert2Lambda")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

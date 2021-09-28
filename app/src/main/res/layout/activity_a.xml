@@ -25,7 +25,7 @@ limitations under the License.
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:paddingBottom="16dip"
-        android:text="@string/activity_a"
+        android:text="@string/activity_a_label"
         android:textColor="@color/light_blue"
         android:textSize="@dimen/font_large" />
 
@@ -91,13 +91,25 @@ limitations under the License.
         android:textColor="@color/light_blue"
         android:textSize="@dimen/font_medium" />
 
-    <TextView
-        android:id="@+id/status_view_all_a"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <TextView
+            android:id="@+id/status_view_all_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="4dip"
+            android:textColor="@color/black"
+            android:typeface="monospace" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:padding="4dip"
-        android:textColor="@color/black"
-        android:typeface="monospace" />
+        android:text="@string/btn_location" />
+
 </LinearLayout>
 

@@ -18,6 +18,7 @@ public class Utils {
      * @param viewStatus  TextView to list out the status of all Activity classes
      * @link http://developer.android.com/guide/topics/fundamentals/activities.html#CoordinatingActivities
      */
+    @SuppressWarnings("Convert2Lambda")
     public static void printStatus(final TextView viewMethods, final TextView viewStatus) {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

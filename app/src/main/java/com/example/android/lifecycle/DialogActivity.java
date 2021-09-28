@@ -1,13 +1,16 @@
 package com.example.android.lifecycle;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
-public class DialogActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
 
+public class DialogActivity extends AppCompatActivity {
+
+    @SuppressWarnings("Convert2Lambda")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +19,8 @@ public class DialogActivity extends Activity {
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(uiOptions);
+
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_dialog);
 

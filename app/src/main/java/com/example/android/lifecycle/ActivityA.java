@@ -1,28 +1,30 @@
 package com.example.android.lifecycle;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.android.lifecycle.util.StatusTracker;
 import com.example.android.lifecycle.util.Utils;
 
-public class ActivityA extends Activity {
+public class ActivityA extends AppCompatActivity {
 
+    private final StatusTracker mStatusTracker = StatusTracker.getInstance();
     private String mActivityName;
     private TextView mStatusView;
     private TextView mStatusAllView;
-    private final StatusTracker mStatusTracker = StatusTracker.getInstance();
 
+    @SuppressWarnings("Convert2Lambda")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a);
 
-        mActivityName = getString(R.string.activity_a);
+        mActivityName = getString(R.string.activity_a_label);
         mStatusView = findViewById(R.id.status_view_a);
         mStatusAllView = findViewById(R.id.status_view_all_a);
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_create));
@@ -58,6 +60,15 @@ public class ActivityA extends Activity {
             public void onClick(View v) {
                 System.out.println("btn_finish_a:" + R.id.btn_finish_a);
                 finishActivityA();
+            }
+        });
+
+        Button location = findViewById(R.id.btn_location);
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("btn_location:" + R.id.btn_location);
+                launchLocationActivity();
             }
         });
     }
@@ -126,6 +137,11 @@ public class ActivityA extends Activity {
 
     public void finishActivityA() {
         ActivityA.this.finish();
+    }
+
+    public void launchLocationActivity() {
+        Intent intent = new Intent(ActivityA.this, LocationActivity.class);
+        startActivity(intent);
     }
 
 }
