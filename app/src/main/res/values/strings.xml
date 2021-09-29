@@ -45,7 +45,7 @@ limitations under the License.
     <string name="btn_finish_b_label">Finish B</string>
     <string name="btn_finish_c_label">Finish C</string>
     <string name="btn_finish_dialog_label">Close</string>
-    <string name="btn_finish_fragment_label">Finish Fragment</string>
+    <string name="btn_finish_fragment_label">Finish Fragment Activity</string>
     <string name="btn_finish_location_label">Finish LOC</string>
 
     <string name="btn_display_message_label">Display Message</string>
@@ -58,4 +58,7 @@ limitations under the License.
     <string name="permission_status_granted">Location Permission Granted</string>
     <string name="permission_status_denied">Location Permission Denied</string>
     <string name="latitude_and_longitude">Lat: %f Long: %f</string>
+
+    <string name="btn_new_fragment_label">New Fragment</string>
+    <string name="btn_previous_fragment_label">Previous Fragment</string>
 </resources>

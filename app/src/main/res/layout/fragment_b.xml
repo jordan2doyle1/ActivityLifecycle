@@ -18,32 +18,10 @@
         android:textSize="@dimen/font_large" />
 
     <Button
-        android:id="@+id/fragment_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_display_message_label"
-        android:paddingBottom="16dip"/>
-
-    <Button
-        android:id="@+id/new_fragment_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_new_fragment_label"
-        android:paddingBottom="16dip"/>
-
-    <Button
         android:id="@+id/btn_finish_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_finish_fragment_label"
+        android:text="@string/btn_previous_fragment_label"
         android:paddingBottom="16dip"/>
-
-    <TextView
-        android:id="@+id/fragment_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/light_purple"
-        android:textSize="@dimen/font_medium"/>
 
 </LinearLayout>
