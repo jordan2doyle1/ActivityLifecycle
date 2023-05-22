@@ -33,7 +33,6 @@ public class ActivityC extends AppCompatActivity {
         start_A.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_a:" + R.id.btn_start_a);
                 startActivityA();
             }
         });
@@ -41,7 +40,6 @@ public class ActivityC extends AppCompatActivity {
         start_B.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_b:" + R.id.btn_start_b);
                 startActivityB();
             }
         });
@@ -49,7 +47,6 @@ public class ActivityC extends AppCompatActivity {
         start_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_dialog:" + R.id.btn_start_dialog);
                 startDialog();
             }
         });
@@ -57,7 +54,6 @@ public class ActivityC extends AppCompatActivity {
         finish_C.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_finish_c:" + R.id.btn_finish_c);
                 finishActivityC();
             }
         });

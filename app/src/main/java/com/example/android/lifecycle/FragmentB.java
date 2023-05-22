@@ -34,7 +34,6 @@ public class FragmentB extends Fragment {
         finish_fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_finish_fragment:" + R.id.btn_finish_fragment);
                 finishFragment();
             }
         });

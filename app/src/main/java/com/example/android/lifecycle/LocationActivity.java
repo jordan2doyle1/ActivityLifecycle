@@ -66,7 +66,6 @@ public class LocationActivity extends AppCompatActivity {
         start_A.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_a:" + R.id.btn_start_a);
                 startActivityA();
             }
         });
@@ -74,7 +73,6 @@ public class LocationActivity extends AppCompatActivity {
         start_B.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_b:" + R.id.btn_start_b);
                 startActivityB();
             }
         });
@@ -82,7 +80,6 @@ public class LocationActivity extends AppCompatActivity {
         start_C.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_c:" + R.id.btn_start_c);
                 startActivityC();
             }
         });
@@ -90,7 +87,6 @@ public class LocationActivity extends AppCompatActivity {
         finish_Location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_finish_location:" + R.id.btn_finish_location);
                 finishActivityLocation();
             }
         });

@@ -33,7 +33,6 @@ public class ActivityB extends AppCompatActivity {
         start_A.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_a:" + R.id.btn_start_a);
                 startActivityA();
             }
         });
@@ -41,7 +40,6 @@ public class ActivityB extends AppCompatActivity {
         start_C.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_c:" + R.id.btn_start_c);
                 startActivityC();
             }
         });
@@ -49,7 +47,6 @@ public class ActivityB extends AppCompatActivity {
         start_fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_start_fragment:" + R.id.btn_start_fragment);
                 startFragment();
             }
         });
@@ -57,7 +54,6 @@ public class ActivityB extends AppCompatActivity {
         finish_B.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_finish_b:" + R.id.btn_finish_b);
                 finishActivityB();
             }
         });

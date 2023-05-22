@@ -35,7 +35,6 @@ public class FragmentA extends Fragment {
         display_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("fragment_button:" + R.id.fragment_button);
                 displayMessage();
             }
         });
@@ -44,7 +43,6 @@ public class FragmentA extends Fragment {
         new_fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("new_fragment_button:" + R.id.new_fragment_button);
                 loadNewFragment();
             }
         });
@@ -53,7 +51,6 @@ public class FragmentA extends Fragment {
         finish_fragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("btn_finish_fragment:" + R.id.btn_finish_fragment);
                 finishFragment();
             }
         });
