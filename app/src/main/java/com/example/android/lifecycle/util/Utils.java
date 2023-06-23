@@ -16,7 +16,7 @@ public class Utils {
      *
      * @param viewMethods TextView to list out the lifecycle methods called
      * @param viewStatus  TextView to list out the status of all Activity classes
-     * @link http://developer.android.com/guide/topics/fundamentals/activities.html#CoordinatingActivities
+     * @link <a href="http://developer.android.com/guide/topics/fundamentals/activities.html#CoordinatingActivities">...</a>
      */
     @SuppressWarnings("Convert2Lambda")
     public static void printStatus(final TextView viewMethods, final TextView viewStatus) {

@@ -16,7 +16,8 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".ActivityA">
+        <activity android:name=".ActivityA"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

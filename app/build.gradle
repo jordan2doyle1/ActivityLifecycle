@@ -9,12 +9,13 @@ android {
             keyPassword 'Kildare!((%2018'
         }
     }
-    compileSdkVersion 30
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "com.example.android.lifecycle"
         minSdkVersion 24
-        targetSdkVersion 30
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion 29
         signingConfig signingConfigs.release
     }
 
@@ -22,6 +23,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            debuggable true
         }
     }
     buildFeatures {
