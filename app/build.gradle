@@ -1,22 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        release {
-            storeFile file('/Users/jordandoyle/AndroidStudioProjects/KeyStore')
-            storePassword 'Compscience13!$'
-            keyAlias = 'ActivityLifecycleKey'
-            keyPassword 'Kildare!((%2018'
-        }
-    }
-    compileSdkVersion 29
+
+    compileSdk 29
 
     defaultConfig {
         applicationId "com.example.android.lifecycle"
-        minSdkVersion 24
-        //noinspection ExpiredTargetSdkVersion
+        minSdkVersion 23
+        //noinspection ExpiredTargetSdkVersion: FlowDroid supports SDK 29 and below.
         targetSdkVersion 29
-        signingConfig signingConfigs.release
     }
 
     buildTypes {
@@ -31,12 +23,15 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.example.android.lifecycle'
 }
 
 dependencies {
-    implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    //noinspection GradleDependency: Upgrade breaks build.
     implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    //noinspection GradleDependency: Upgrade breaks build.
     implementation "androidx.fragment:fragment:1.3.6"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }

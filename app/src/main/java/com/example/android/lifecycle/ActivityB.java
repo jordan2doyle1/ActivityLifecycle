@@ -76,12 +76,6 @@ public class ActivityB extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN |
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(uiOptions);
-
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_resume));
         Utils.printStatus(mStatusView, mStatusAllView);
     }

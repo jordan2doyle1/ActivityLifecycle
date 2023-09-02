@@ -14,14 +14,7 @@ public class DialogActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN |
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(uiOptions);
-
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-
         setContentView(R.layout.activity_dialog);
 
         Button close_dialog = findViewById(R.id.btn_close_dialog);

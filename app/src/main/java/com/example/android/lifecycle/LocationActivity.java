@@ -19,8 +19,8 @@ import androidx.core.content.ContextCompat;
 import com.example.android.lifecycle.util.StatusTracker;
 import com.example.android.lifecycle.util.Utils;
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.Priority;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.OnSuccessListener;
 
@@ -130,7 +130,7 @@ public class LocationActivity extends AppCompatActivity {
                 if (locationPermissionGranted) {
 
                     fusedLocationClient.getCurrentLocation(
-                            LocationRequest.PRIORITY_HIGH_ACCURACY, cancellationSource.getToken())
+                            Priority.PRIORITY_HIGH_ACCURACY, cancellationSource.getToken())
                             .addOnSuccessListener(new OnSuccessListener<Location>() {
                                 @Override
                                 public void onSuccess(Location location) {
@@ -164,12 +164,6 @@ public class LocationActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        int uiOptions = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN |
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-        View decorView = getWindow().getDecorView();
-        decorView.setSystemUiVisibility(uiOptions);
-
         mStatusTracker.setStatus(mActivityName, getString(R.string.on_resume));
         Utils.printStatus(mStatusView, mStatusAllView);
     }
