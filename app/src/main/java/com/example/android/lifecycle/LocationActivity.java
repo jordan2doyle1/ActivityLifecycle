@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,17 +31,22 @@ public class LocationActivity extends AppCompatActivity {
     boolean locationPermissionGranted;
     // Register the permissions callback, which handles the user's response to the system permissions dialog. Save
     // the return value, an instance of ActivityResultLauncher, as an instance variable.
-    private final ActivityResultLauncher<String> requestPermissionLauncher =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted) {
-                    locationPermissionGranted = true;
-                    Toast.makeText(this, R.string.permission_status_granted, Toast.LENGTH_LONG).show();
-                } else {
-                    // Explain to the user that the feature is unavailable because the features requires a permission
-                    // that the user has denied. At the same time, respect the user's decision. Don't link to system
-                    // settings in an effort to convince the user to change their decision.
-                    locationPermissionGranted = false;
-                    Toast.makeText(this, R.string.permission_status_denied, Toast.LENGTH_LONG).show();
+    private final ActivityResultLauncher<String> requestPermissionLauncher = registerForActivityResult(
+            new ActivityResultContracts.RequestPermission(), new ActivityResultCallback<Boolean>() {
+                @Override
+                public void onActivityResult(Boolean isGranted) {
+                    if (isGranted) {
+                        locationPermissionGranted = true;
+                        Toast.makeText(LocationActivity.this, R.string.permission_status_granted,
+                                Toast.LENGTH_LONG).show();
+                    } else {
+                        // Explain to the user that the feature is unavailable because the features requires a permission
+                        // that the user has denied. At the same time, respect the user's decision. Don't link to system
+                        // settings in an effort to convince the user to change their decision.
+                        locationPermissionGranted = false;
+                        Toast.makeText(LocationActivity.this, R.string.permission_status_denied,
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
             });
     private String mActivityName;
@@ -50,7 +56,6 @@ public class LocationActivity extends AppCompatActivity {
     private Location lastKnownLocation;
     private CancellationTokenSource cancellationSource;
 
-    @SuppressWarnings("Convert2Lambda")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,7 +135,7 @@ public class LocationActivity extends AppCompatActivity {
                 if (locationPermissionGranted) {
 
                     fusedLocationClient.getCurrentLocation(
-                            Priority.PRIORITY_HIGH_ACCURACY, cancellationSource.getToken())
+                                    Priority.PRIORITY_HIGH_ACCURACY, cancellationSource.getToken())
                             .addOnSuccessListener(new OnSuccessListener<Location>() {
                                 @Override
                                 public void onSuccess(Location location) {

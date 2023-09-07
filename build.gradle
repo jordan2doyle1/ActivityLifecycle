@@ -5,7 +5,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.1'
+        //noinspection AndroidGradlePluginVersion: Upgrade breaks JaCoco instrumentation.
+        classpath 'com.android.tools.build:gradle:4.0.0'
     }
 }
 
